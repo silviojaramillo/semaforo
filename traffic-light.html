@@ -7,14 +7,13 @@
     <title>Semáforo</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
-<body onload="control()">
+<body>
     <h1>Semáforo usando HTML, CSS y JS</h1>
     <div class="fondo">
         <div class="borde">
-            <div class="light" id="primero"></div>
+            <div class="light" id="primero" onclick="rojo(this)"></div>
             <div class="light" id="segundo"></div>
             <div class="light" id="tercero"></div>
-            <input type="button" value="cambiar" onclick="cambiar(this)">
         </div>
     </div>
     <script src="js/control.js"></script>
