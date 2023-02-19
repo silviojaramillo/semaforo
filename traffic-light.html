@@ -9,11 +9,18 @@
 </head>
 <body>
     <h1>Semáforo usando HTML, CSS y JS</h1>
-    <div class="fondo">
-        <div class="borde">
-            <div class="light" id="primero" onclick="rojo(this)"></div>
-            <div class="light" id="segundo"></div>
-            <div class="light" id="tercero"></div>
+    <div class="centrar">
+        <div class="content">
+            <div class="fondo">
+                <div class="borde">
+                    <div class="light" id="primero" onclick="rojo()"></div>
+                    <div class="light" id="segundo" onclick="amarillo()"></div>
+                    <div class="light" id="tercero" onclick="verde()"></div>
+                </div>
+            </div>
+            <div class="contador">
+                <div id="timer" class="timer">00</div>
+            </div>
         </div>
     </div>
     <script src="js/control.js"></script>
