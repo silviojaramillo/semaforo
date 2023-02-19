@@ -1,6 +1,6 @@
 number = 60;
 function rojo() {
-    let color1 = document.getElementById('segundo');
+    let color1 = document.getElementById('primero');
     color1.style.background = 'red';
     color1.classList.add('primero');
     let color2 = document.getElementById('segundo');
@@ -38,7 +38,9 @@ function verde() {
     let borde3 = document.getElementById('timer');
     borde3.style.color = 'green';
 }
-setInterval(()=>{
+
+
+const timer = setInterval(()=>{
     console.log(number);
     number--;
     if(number == 0){
