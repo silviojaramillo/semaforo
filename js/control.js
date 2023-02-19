@@ -1,6 +1,6 @@
-number = 10;
+number = 60;
 function rojo() {
-    let color1 = document.getElementById('primero');
+    let color1 = document.getElementById('segundo');
     color1.style.background = 'red';
     color1.classList.add('primero');
     let color2 = document.getElementById('segundo');
@@ -11,8 +11,6 @@ function rojo() {
     color3.style.background = '#4e4949';
     let borde1 = document.getElementById('timer');
     borde1.style.color = 'red';
-    number = 60;
-    timer();
 }
 function amarillo() {
     let color = document.getElementById('segundo');
@@ -26,8 +24,6 @@ function amarillo() {
     color3.style.background = '#4e4949';
     let borde2 = document.getElementById('timer');
     borde2.style.color = 'yellow';
-    number = 3;
-    timer();
 }
 function verde() {
     let color = document.getElementById('tercero');
@@ -41,16 +37,11 @@ function verde() {
     color3.style.background = '#4e4949';
     let borde3 = document.getElementById('timer');
     borde3.style.color = 'green';
-    number = 60;
-    timer();
 }
-
-
-const timer = setInterval(()=>{
+setInterval(()=>{
     console.log(number);
     number--;
     if(number == 0){
         clearInterval(timer);
     }
 },1000)
-
