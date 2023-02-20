@@ -19,6 +19,7 @@ body{
     display: inline-flex;
     gap: 50px;
 }
+
 .fondo{
     background-color: rgb(34, 34, 34);
     height: 600px;
@@ -82,7 +83,6 @@ body{
     display: flex;
     justify-content: center;
 }
-
 
 .timer{
     display: flex;
