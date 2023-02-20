@@ -1,49 +1,44 @@
-number = 60;
-function rojo() {
-    let color1 = document.getElementById('primero');
-    color1.style.background = 'red';
-    color1.classList.add('primero');
-    let color2 = document.getElementById('segundo');
-    color2.classList.remove('segundo')
-    let color3 = document.getElementById('tercero');
-    color3.classList.remove('tercero')
-    color2.style.background = '#4e4949';
-    color3.style.background = '#4e4949';
-    let borde1 = document.getElementById('timer');
-    borde1.style.color = 'red';
-}
-function amarillo() {
-    let color = document.getElementById('segundo');
-    color.style.background = 'yellow';
-    color.classList.add('segundo');
-    let color2 = document.getElementById('primero');
-    color2.classList.remove('primero')
-    let color3 = document.getElementById('tercero');
-    color3.classList.remove('tercero')
-    color2.style.background = '#4e4949';
-    color3.style.background = '#4e4949';
-    let borde2 = document.getElementById('timer');
-    borde2.style.color = 'yellow';
-}
-function verde() {
-    let color = document.getElementById('tercero');
-    color.style.background = 'green';
-    color.classList.add('tercero');
-    let color2 = document.getElementById('primero');
-    color2.classList.remove('primero')
-    let color3 = document.getElementById('segundo');
-    color3.classList.remove('segundo')
-    color2.style.background = '#4e4949';
-    color3.style.background = '#4e4949';
-    let borde3 = document.getElementById('timer');
-    borde3.style.color = 'green';
-}
-
-
-const timer = setInterval(()=>{
-    console.log(number);
-    number--;
-    if(number == 0){
-        clearInterval(timer);
+const valor  = document.querySelectorAll('.light');
+const valor1 = document.getElementById('timer');
+let count = 0;
+let countPaso = 0;
+let color1 = 6;
+let color2 = 9;
+let color3 = 16;
+let mostrarValor = 00;
+function counter() {
+    if(countPaso <= color1){
+        count = 0;
+    }else if(countPaso > color1 && countPaso <= color2){
+        count = 1;
+    }else if(countPaso > color2 && countPaso <= color3){
+        count = 2;
+    }else{
+        countPaso = 0;
+        count = 0;
     }
-},1000)
+    if(count == 0){
+        valor[0].classList.add('rojo');
+        valor[1].classList.remove('amarillo');
+        valor[2].classList.remove('verde');
+        valor1.style.color = 'red';
+        valor1.innerHTML = (color1-countPaso);
+    }else if(count == 1){
+        valor[1].classList.add('amarillo');
+        valor[0].classList.remove('rojo');
+        valor[2].classList.remove('verde');
+        valor1.style.color = 'yellow';
+        valor1.innerHTML = (color2-countPaso);
+    }else if(count == 2){
+        valor[2].classList.add('verde');
+        valor[0].classList.remove('rojo');
+        valor[1].classList.remove('amarillo');
+        valor1.style.color = 'green';
+        valor1.innerHTML = (color3-countPaso);
+    }
+    countPaso++;
+    console.log('Cont = ' + count);
+    console.log('countPaso = ' + countPaso);
+}
+
+setInterval(counter,1000);
